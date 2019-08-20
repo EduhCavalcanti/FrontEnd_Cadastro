@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
+.box-login{
+    width: 360px;
+    height: 580px;
+    background: #f1f1f1;
+    padding: 80px 40px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+form, h1{
+    text-align: center;
+    margin-bottom: 60px;
+    
+}
+
+.box-text{
+    border-bottom: solid 2px #adadad;
+    position: relative;
+    margin: 30px 0;
+}
+.box-text input{  
+    font-size: 15px;
+    color:#333;
+    border: none;
+    width: 100%;
+    outline: none;
+    background:none;
+    padding: 0px 5px;
+    height: 25px;
+
+}
+
+.box-senha{
+    border-bottom: solid 2px #adadad;
+    position: relative;
+    margin: 30px 0;
+}
+.box-senha input{  
+    font-size: 15px;
+    color:#333;
+    border: none;
+    width: 100%;
+    outline: none;
+    background:none;
+    padding: 0px 5px;
+    height: 25px;
+
+}
+
+.box-button{
+    flex-direction: column;
+    display: flex;
+}
+
+.box-button button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 20px 0px;
+    background: linear-gradient(120deg, #3498db, #8e44ad, #3498db );
+    background-size: 200%;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .5s;
+}
+.box-button button:hover{
+    background-position: right;
+}
