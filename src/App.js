@@ -6,13 +6,13 @@ import Login from './pages/login'
 
 import './App.css';
 
-function App() { //Componente App
-
-
+class App extends React.Component { //Componente App
+  
+  render() {
   return (
     <Login />
     
-  );
+  )};
 }
 
 export default App;

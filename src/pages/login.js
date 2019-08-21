@@ -1,6 +1,7 @@
 import React from 'react'
 import '../pages/login.css'
 
+
 function Login(){//Componente login
    
 
@@ -24,7 +25,7 @@ function Login(){//Componente login
 
                     <div className='box-button'>
                         <button>
-                                Logar
+                            Logar 
                         </button>
                         
                         <button>
