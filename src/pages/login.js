@@ -24,7 +24,7 @@ function Login(){//Componente login
                     </div>
 
                     <div className='box-button'>
-                        <button>
+                        <button type="submit">
                             Logar 
                         </button>
                         
