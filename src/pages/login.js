@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../pages/login.css'
-//import api from '../services/api' // exportando a api para fazer conexão com o backEnd
+import api from '../services/api' // exportando a api para fazer conexão com o backEnd
 
 
 function Login({history}) {//Componente login
@@ -11,12 +11,18 @@ function Login({history}) {//Componente login
   const [userPassword, setUserPassword] = useState('')//Vou pegar a senha agora  
 
       //Vou criar uma funçao de quando o usuário for enviar o form
-      function handleSubmit(e){//Vai receber um evento 
+    async  function handleSubmit(e){//Vai receber um evento 
         e.preventDefault() //Vai previnir de redirecionar a página para outra e vai bloquear 
-        
-        console.log(userName, userPassword)//Vai retonar o que o usuário escrever
+        //fazendo conexão com back para logar, aqui vai exigir o token
+        const response =  await api.get('/login',{
+          nome: userName,
+          password: userPassword
+        })
 
-        history.push('/logado')
+
+        console.log(response)
+        
+        history.push('/')
       }
 
       function handleClick(e){ // Função que quando clica no button "Registrar " levar pra rota de registro

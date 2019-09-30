@@ -9,8 +9,8 @@ export default function Routes(){
     return(
      <BrowserRouter>
         <Route path="/login" exact component={Login}/>
-        <Route path="/logado" component={Inicial}/>
-        <Route path="/Register" component={Register}/>
+        <Route path="/" exact component={Inicial}/>
+        <Route path="/register" exact component={Register}/>
      </BrowserRouter>   
     )
 };
