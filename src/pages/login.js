@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import '../pages/login.css'
 import api from '../services/api' // exportando a api para fazer conexão com o backEnd
 
+import {login} from '../services/auth' 
 
 function Login({history}) {//Componente login
   const [userName, setUserName] = useState('') // Usando useState iniciado com valor vazio
@@ -13,14 +14,16 @@ function Login({history}) {//Componente login
       //Vou criar uma funçao de quando o usuário for enviar o form
     async  function handleSubmit(e){//Vai receber um evento 
         e.preventDefault() //Vai previnir de redirecionar a página para outra e vai bloquear 
+        
         //fazendo conexão com back para logar, aqui vai exigir o token
-        const response =  await api.get('/login',{
-          nome: userName,
+        const response =  await api.post('/login',{
+          email: userName,
           password: userPassword
         })
+        login(response.data.token);
+        
 
-
-        console.log(response)
+        console.log(login)
         
         history.push('/')
       }
@@ -39,7 +42,7 @@ function Login({history}) {//Componente login
         <h1>Login</h1>
         <div className='box-text'>
             <input type='text' 
-                  placeholder='Digite seu login'
+                  placeholder='Digite seu Email'
                   value={userName} //Passando o valor vazio com a variável criada la em cima
                   onChange={e => setUserName(e.target.value)} //Vai passar um "e" de evento com uma função 
                                   //Vai pegar o valor que ele vai digitar no input e passar pra função do setUserName
