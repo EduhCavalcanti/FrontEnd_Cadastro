@@ -20,11 +20,12 @@ function Login({history}) {//Componente login
           email: userName,
           password: userPassword
         })
+        //Vai passar com o token e vai ser logado!
+        //const { token} = response.data
         login(response.data.token);
-        
-
-        console.log(login)
-        
+        //Vai retornar o token
+        //console.log(token)
+        //Vai redirecionar para pagina de logado!
         history.push('/')
       }
 

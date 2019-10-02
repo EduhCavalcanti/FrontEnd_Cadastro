@@ -1,10 +1,13 @@
 import React from 'react'
+import Section from './section/sectionlogado'
+
 
 export default function Inicio(){
 
     return(
-        <div>
-            <p>Bem vindo, </p>
-        </div>
+        <>
+        <Section/>
+        </>
     )
 }
+
