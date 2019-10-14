@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-
+import './style.css'
 
 class Iniciar extends Component {
   //Estado incial
@@ -18,31 +18,27 @@ class Iniciar extends Component {
   
   //Criando método que vai fazer acontecer quando digitar no input
   handlerChange = e => {
-    this.setState({ novaLista: e.target.value })
+   
   }
 
   handlerSubmit = e => {
-    e.preventDefault()
-    this.setState({contador: 1+this.state.contador})
+    e.preventDefault();
+    
   }
 
   render() {
     return (
       <>  
-      <h1>Lista de tarefas</h1>
-      <form >
-        <ul>
-          {this.state.listas.map(todoList => <li key={todoList}>{todoList}</li>)}
-        </ul>
-        <input
-          type='text'
+      <h1>Adicione uma foto ao seu perfil</h1>
+      <form onSubmit={this.handlerSubmit}>
+        
+        <input 
+          type="file" 
+          name="foto" 
+          id="foto"
           onChange={this.handlerChange}
-          value={this.state.novaLista}
-        >
-        </input>
-        <p>Você Clicou:{this.state.contador}</p>
-
-         <button onClick={this.handlerSubmit}>Adicionar</button>
+          />
+        <button type="submit">Adicionar foto</button>
       </form>
        
       </>
